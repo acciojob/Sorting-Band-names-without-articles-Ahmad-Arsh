@@ -1,11 +1,10 @@
-//your code here
 let touristSpots = ['The Virupaksha Temple', 'Victoria Memorial', 'Tajmahal'];
 
 function stripArticles(name) {
     return name.replace(/^(a |an |the )/i, '');
 }
 
-touristSpots.sort((a, b) => stripArticles(a) > stripArticles(b) ? 1 : -1);
+touristSpots.sort((a, b) => stripArticles(a).localeCompare(stripArticles(b)));
 
 let list = document.querySelector('#band');
 touristSpots.forEach(spot => {
